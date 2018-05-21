@@ -129,8 +129,8 @@ public class wordladderController {
 		//File file = new File("src\\main\\resources\\static\\" +dict_name);
 		
 		
-		String path = wordladderController.class.getClassLoader().getResource("/static/"+dict_name).getPath();
-		System.out.println(path);
+		String path = Thread.currentThread().getContextClassLoader().getResource("").getPath()+"/static/"+dict_name;
+		
 		File file = new File(path);
 		
 		
