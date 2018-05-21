@@ -123,7 +123,17 @@ public class wordladderController {
 			//dict_name = in.nextLine();
 		}
 		//in.close();
-		File file = new File("src\\main\\resources\\static\\" +dict_name);
+		
+		
+		// file path in server is different ????????
+		//File file = new File("src\\main\\resources\\static\\" +dict_name);
+		
+		
+		String path = wordladderController.class.getClassLoader().getResource("/static/"+dict_name).getPath();
+		System.out.println(path);
+		File file = new File(path);
+		
+		
 		try {
 			//read by line
 			BufferedReader reader = new BufferedReader(new FileReader(file));
