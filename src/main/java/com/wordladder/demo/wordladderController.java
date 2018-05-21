@@ -128,7 +128,7 @@ public class wordladderController {
 		// file path in server is different ????????
 		//File file = new File("src\\main\\resources\\static\\" +dict_name);
 		
-		
+		// server end path should like this
 		String path = Thread.currentThread().getContextClassLoader().getResource("").getPath()+"/static/"+dict_name;
 		
 		File file = new File(path);
