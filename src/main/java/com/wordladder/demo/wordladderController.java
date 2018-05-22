@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 import java.io.*;
 
-import org.assertj.core.util.introspection.ClassUtils;
 import org.slf4j.Logger;  
 import org.slf4j.LoggerFactory; 
 
@@ -133,18 +132,20 @@ public class wordladderController {
 		// server end path should like this
 		//String path = wordladderController.class.getClass().getClassLoader().getResourceAsStream("/static/"+dict_name);
 		
-		//String path = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+		String path = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 		//System.out.println(path);
 		
-		//File file = new File(path+"/static/"+dict_name);
-		//InputStream file = wordladderController.class.getClass().getClassLoader().getResourceAsStream("/static/"+dict_name);
-		
-		InputStream in = wordladderController.class.getClassLoader().getResourceAsStream("static/"+dict_name);
+		File file = new File(path+"/static/"+dict_name);
+		//String path = wordladderController.class.getClass().getClassLoader().getResource("static/"+dict_name).getPath();
+		//System.out.println(path);
+		//File file = new File(path);
 		//BufferedReader reader = new BufferedReader(new FileReader(file));
-		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+		
+		//InputStream in = wordladderController.class.getClassLoader().getResourceAsStream("static/"+dict_name);
+		//BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 		try {
 			//read by line
-			
+			BufferedReader reader = new BufferedReader(new FileReader(file));
 			String nextLine = null;
 			
 			while ((nextLine = reader.readLine()) != null) {
