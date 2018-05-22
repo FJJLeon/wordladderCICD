@@ -1,5 +1,7 @@
-# wordladderCICD
+# wordladderCICD[![Build Status](https://travis-ci.org/FJJLeon/wordladderCICD.svg?branch=master)](https://travis-ci.org/FJJLeon/wordladderCICD)
 wordladder with CICD
+## 访问：
+### https://desolate-ravine-33082.herokuapp.com/wordladder?dictname=smalldict1.txt&word1=bee&word2=bog
 
 #CI/CD环境搭建
 ##CI:它绑定 Github 上面的项目，只要有新的代码，就会自动抓取。然后，提供一个运行环境，执行测试，完成构建。
@@ -23,6 +25,7 @@ wordladder with CICD
     before_install: chomed +x mvnw  
 
 ####最后的 chmod 给 mvnw权限，否则在Travis CI跑的时候会报 permission denied
+
 ##CD环境搭建：
 ###1. 首先搭建了一个服务器
 ####选择了heroku，把服务部署到了heroku上，在这个过程比较复杂，但不属于CICD的内容，参考heroku的官网：https://devcenter.heroku.com/articles/getting-started-with-java
