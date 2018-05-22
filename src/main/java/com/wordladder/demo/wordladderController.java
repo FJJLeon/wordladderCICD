@@ -132,20 +132,22 @@ public class wordladderController {
 		// server end path should like this
 		//String path = wordladderController.class.getClass().getClassLoader().getResourceAsStream("/static/"+dict_name);
 		
+		/*
 		String path = Thread.currentThread().getContextClassLoader().getResource("").getPath();
-		//System.out.println(path);
 		
 		File file = new File(path+"/static/"+dict_name);
+		*/
+		
 		//String path = wordladderController.class.getClass().getClassLoader().getResource("static/"+dict_name).getPath();
 		//System.out.println(path);
 		//File file = new File(path);
 		//BufferedReader reader = new BufferedReader(new FileReader(file));
 		
-		//InputStream in = wordladderController.class.getClassLoader().getResourceAsStream("static/"+dict_name);
-		//BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+		InputStream in = wordladderController.class.getClassLoader().getResourceAsStream("static/"+dict_name);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 		try {
 			//read by line
-			BufferedReader reader = new BufferedReader(new FileReader(file));
+			//BufferedReader reader = new BufferedReader(new FileReader(file));
 			String nextLine = null;
 			
 			while ((nextLine = reader.readLine()) != null) {
