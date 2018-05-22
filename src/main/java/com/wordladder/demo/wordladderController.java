@@ -129,9 +129,13 @@ public class wordladderController {
 		//File file = new File("src\\main\\resources\\static\\" +dict_name);
 		
 		// server end path should like this
-		String path = Thread.currentThread().getContextClassLoader().getResource("").getPath()+"/static/"+dict_name;
+		//String path = wordladderController.class.getClass().getClassLoader().getResourceAsStream("/static/"+dict_name);
 		
-		File file = new File(path);
+		String path = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+		//System.out.println(path);
+		
+		File file = new File(path+"/static/"+dict_name);
+		//InputStream file = wordladderController.class.getClass().getClassLoader().getResourceAsStream("/static/"+dict_name);
 		
 		
 		try {
